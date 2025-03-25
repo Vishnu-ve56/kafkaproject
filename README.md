@@ -2,7 +2,7 @@
 
 This project captures changes from a PostgreSQL `source_table` using Debezium and Kafka, then syncs those changes into a `destination_table` using a Node.js consumer.
 
-## 🔧 Setup
+## Setup
 
 ### 1. Prerequisites
 
@@ -35,9 +35,9 @@ CREATE TABLE destination_table (
 
 Run Kafka Connect with Debezium configured and the PostgreSQL connector registered. It should capture changes to source_table.
 
-### 🚀 4. Start Node.js Consumer
+### 4. Start Node.js Consumer
 
-#### 📦 Install dependencies
+#### Install dependencies
 
 ```bash
 npm install kafkajs pg
