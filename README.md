@@ -59,6 +59,6 @@ npm install kafkajs pg
 ```bash 
 node consumer.js
 ```
-____
+
 
 
