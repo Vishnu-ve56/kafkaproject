@@ -2,6 +2,17 @@
 
 This project captures changes from a PostgreSQL `source_table` using Debezium and Kafka, then syncs those changes into a `destination_table` using a Node.js consumer.
 
+## Project Overview
+
+This project demonstrates a basic real-time Change Data Capture (CDC) pipeline using the following components:
+
+1. **Debezium PostgreSQL Connector** monitors a PostgreSQL `source_table` using logical replication.
+2. When rows are inserted or updated in the `source_table`, Debezium streams change events to a Kafka topic.
+3. A **Kafka topic** (e.g. `PostgreSQL_Local.public.source_table`) receives the changes in JSON format.
+4. A **Node.js consumer** (using `kafkajs`) listens to the topic and performs UPSERT operations into the `destination_table` using PostgreSQL.
+
+This setup allows you to keep two PostgreSQL tables in sync in real-time — useful for analytics, backups, and event-driven systems.
+
 ## Setup
 
 ### 1. Prerequisites
